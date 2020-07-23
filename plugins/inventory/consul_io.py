@@ -70,8 +70,8 @@ if this is not set
 'tags':
 
 boolean flag defining if service tags should be used to create Inventory
-groups e.g. an nginx service with the tags ['master', 'v1'] will create
-groups nginx_master and nginx_v1 to which the node running the service
+groups e.g. an nginx service with the tags ['main', 'v1'] will create
+groups nginx_main and nginx_v1 to which the node running the service
 will be added. No tag groups are created if this is missing.
 
 'token':
@@ -273,7 +273,7 @@ class ConsulInventory(object):
 
   def extract_groups_from_tags(self, service_name, service, node_data):
     '''iterates each service tag and adds the node to groups derived from the
-    service and tag names e.g. nginx_master'''
+    service and tag names e.g. nginx_main'''
     if self.config.has_config('tags') and service['Tags']:
       tags = service['Tags']
       self.add_metadata(node_data, "consul_%s_tags" % service_name, tags)

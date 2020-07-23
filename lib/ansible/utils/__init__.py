@@ -400,7 +400,7 @@ def role_spec_parse(role_spec):
   
     role_spec = role_spec.strip()
     role_version = ''
-    default_role_versions = dict(git='master', hg='tip')
+    default_role_versions = dict(git='main', hg='tip')
     if role_spec == "" or role_spec.startswith("#"):
         return (None, None, None, None)
 

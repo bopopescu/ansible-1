@@ -1791,16 +1791,16 @@ class LinuxNetwork(Network):
                     interfaces[device]['stp'] = get_file_content(os.path.join(path, 'bridge', 'stp_state')) == '1'
             if os.path.exists(os.path.join(path, 'bonding')):
                 interfaces[device]['type'] = 'bonding'
-                interfaces[device]['slaves'] = get_file_content(os.path.join(path, 'bonding', 'slaves'), default='').split()
+                interfaces[device]['subordinates'] = get_file_content(os.path.join(path, 'bonding', 'subordinates'), default='').split()
                 interfaces[device]['mode'] = get_file_content(os.path.join(path, 'bonding', 'mode'), default='').split()[0]
                 interfaces[device]['miimon'] = get_file_content(os.path.join(path, 'bonding', 'miimon'), default='').split()[0]
                 interfaces[device]['lacp_rate'] = get_file_content(os.path.join(path, 'bonding', 'lacp_rate'), default='').split()[0]
                 primary = get_file_content(os.path.join(path, 'bonding', 'primary'))
                 if primary:
                     interfaces[device]['primary'] = primary
-                    path = os.path.join(path, 'bonding', 'all_slaves_active')
+                    path = os.path.join(path, 'bonding', 'all_subordinates_active')
                     if os.path.exists(path):
-                        interfaces[device]['all_slaves_active'] = get_file_content(path) == '1'
+                        interfaces[device]['all_subordinates_active'] = get_file_content(path) == '1'
 
             # Check whether an interface is in promiscuous mode
             if os.path.exists(os.path.join(path,'flags')):

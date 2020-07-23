@@ -26,7 +26,7 @@ class ActionModule(object):
         self.runner = runner
 
     def run(self, conn, tmp, module_name, module_args, inject, complex_args=None, **kwargs):
-        ''' handler for running operations on master '''
+        ''' handler for running operations on main '''
 
         # load up options
         options  = {}

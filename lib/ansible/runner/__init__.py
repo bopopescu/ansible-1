@@ -714,7 +714,7 @@ class Runner(object):
             "ansible_ssh_user": "apps",
             "defaults": {},
             "groups": {
-                "master1": [
+                "main1": [
                     "10.201.43.174"
                 ],
                 "all": [
@@ -723,7 +723,7 @@ class Runner(object):
                     "10.201.43.175",
                     "10.201.51.190"
                 ],
-                "slave": [
+                "subordinate": [
                     "10.201.43.175"
                 ],
                 "ungrouped": [
@@ -733,7 +733,7 @@ class Runner(object):
                     "10.201.43.174",
                     "10.201.43.175"
                 ],
-                "master": [
+                "main": [
                     "10.201.43.174"
                 ],
                 "test": [

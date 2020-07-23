@@ -835,7 +835,7 @@ class TestUtils(unittest.TestCase):
                 {
                     'scm' : 'git',
                     'src' : 'http://github.com/ansible/fakerole/fake',
-                    'version' : 'master', 
+                    'version' : 'main', 
                     'name' : 'fake'
                 }
             ),
@@ -846,7 +846,7 @@ class TestUtils(unittest.TestCase):
                     'scm' : None,
                     'src' : 'http://github.com/ansible/fakerole/fake/archive/master.tar.gz',
                     'version' : '', 
-                    'name' : 'master'
+                    'name' : 'main'
                 }
             )
             ]
